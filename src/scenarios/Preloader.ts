@@ -71,6 +71,18 @@ export default class Preloader extends Phaser.Scene {
       ],
     });
 
+    this.anims.create({
+      key: AnimationKeys.RocketMouseDead,
+      frameRate: 10,
+      frames: this.anims.generateFrameNames(TextureKeys.RocketMouse, {
+        start: 1,
+        end: 2,
+        prefix: 'rocketmouse_dead',
+        zeroPad: 2,
+        suffix: '.png',
+      }),
+    });
+
     this.scene.start(SceneKeys.Game);
   }
 }

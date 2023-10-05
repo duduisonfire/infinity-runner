@@ -1,9 +1,9 @@
 import Phaser from 'phaser';
 import { TextureKeys } from '../utils/TextureKeys';
 import { SceneKeys } from '../utils/SceneKeys';
-import { AnimationKeys } from '../utils/AnimationKeys';
 import RocketMouse from '../game/RocketMouse';
 import LaserObstacle from '../game/LaserObstacler';
+import { GameObjectWithPhysics } from '../types/GameObjectWithPhysics';
 
 export default class Game extends Phaser.Scene {
   private background!: Phaser.GameObjects.TileSprite;
@@ -178,10 +178,10 @@ export default class Game extends Phaser.Scene {
     }
   }
 
-  private handleOverlapLaser(
-    obj1: Phaser.Types.Physics.Arcade.GameObjectWithBody | Phaser.Tilemaps.Tile,
-    obj2: Phaser.Types.Physics.Arcade.GameObjectWithBody | Phaser.Tilemaps.Tile,
-  ) {
-    console.log('Overlap!');
+  private handleOverlapLaser(obj1: GameObjectWithPhysics, obj2: GameObjectWithPhysics) {
+    // const laser = obj1 as LaserObstacle;
+    const mouse = obj2 as RocketMouse;
+
+    mouse.kill();
   }
 }
