@@ -83,7 +83,7 @@ export default class Game extends Phaser.Scene {
     );
   }
 
-  update(t: number, dt: number) {
+  update() {
     this.wrapMouseHole();
     this.wrapWindow();
     this.wrapBookcase();
