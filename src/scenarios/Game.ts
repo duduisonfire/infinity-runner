@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 import { TextureKeys } from '../utils/TextureKeys';
 import { SceneKeys } from '../utils/SceneKeys';
 import RocketMouse from '../game/RocketMouse';
-import LaserObstacle from '../game/LaserObstacler';
+import LaserObstacle from '../game/LaserObstacle';
 import { GameObjectWithPhysics } from '../types/GameObjectWithPhysics';
 
 export default class Game extends Phaser.Scene {
